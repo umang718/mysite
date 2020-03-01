@@ -8,8 +8,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def home(request):
-	
-	return render(request,'home1.html')
+	count=User.objects.count()
+	return render(request,'home.html',{
+			'count':count
+		})
 
 def signup(request):
 	if request.method == 'POST':
