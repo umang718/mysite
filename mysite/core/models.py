@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class RoomDetails(models.Model):
+class RoomDetails1(models.Model):
 	firstname=models.CharField(max_length=200)
 	lastname=models.CharField(max_length=200)
 	email=models.CharField(max_length=200)
