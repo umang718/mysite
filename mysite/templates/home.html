@@ -19,32 +19,33 @@
 				}
 			</style>
 
-			<form method="post" onSubmit="return validateForm();" action="/submitdetails/"> 
+			<form method="post"  action="submitform"> 
 				{% csrf_token %}
 				<div style="width: 400px;">
 				</div>
-				<div style="padding-bottom: 18px;font-size : 24px;">Room Booking
-				</div>
+				
 				<div style="display: flex; padding-bottom: 18px;width : 450px;">
 					<div style=" margin-left : 0; margin-right : 1%; width : 49%;">First name<span style="color: red;"> *</span><br/>
-						<input type="text" id="data_2" name="data_2" style="width: 100%;" class="form-control"/>
+						<input type="text" id="data_1" name="data_1" style="width: 100%;" class="form-control"/>
 					</div>
 					<div style=" margin-left : 1%; margin-right : 0; width : 49%;">Last name<span style="color: red;"> *</span><br/>
-						<input type="text" id="data_3" name="data_3" style="width: 100%;" class="form-control"/>
+						<input type="text" id="data_2" name="data_2" style="width: 100%;" class="form-control"/>
 					</div>
 				</div>
 				<div style="padding-bottom: 18px;">Phone<span style="color: red;"> *</span><br/>
-					<input type="text" id="data_4" name="data_4" style="width : 450px;" class="form-control"/>
+					<input type="text" id="data_3" name="data_3" style="width : 450px;" class="form-control"/>
 				</div>
 				<div style="padding-bottom: 18px;">Email<span style="color: red;"> *</span><br/>
-					<input type="text" id="data_5" name="data_5" style="width : 450px;" class="form-control"/>
+					<input type="text" id="data_4" name="data_4" style="width : 450px;" class="form-control"/>
 				</div>
 				<div style="padding-bottom: 18px;">Arrival date<span style="color: red;"> *</span><br/>
-					<input type="date" id="data_6" name="data_6" style="width : 250px;"/>
+					<input type="date" id="data_5" name="data_5" style="width : 250px;"/>
 				</div>
-
+				
+				
+				
 				<div style="padding-bottom: 18px;">Select Your Time Slot<span style="color: red;"> *</span><br/>
-					<select type="text" id="data_7" name="data_7" style="width : 250px;"> 
+					<select type="text" id="data_6" name="data_6" style="width : 250px;"> 
 				        <option value ="0"> Please select </option>
 				        <option value = "08:00-9:00" > 08:00-9:00 </option>
 				        <option value = "09:00-10:00" > 09:00-10:00 </option>
@@ -63,20 +64,22 @@
 				        <option value = "22:00-23:00" > 22:00-23:00 </option>
 				    </select>
 				</div>
+			
 				
 				<div style="padding-bottom: 18px;">Number of adults<span style="color: red;"> *</span><br/>
-					<input type="number" id="data_8" name="data_8" style="width : 250px;" class="form-control"/>
+					<input type="number" id="data_7" name="data_7" style="width : 250px;" class="form-control"/>
 				</div>
 				<div style="padding-bottom: 18px;">Number of children<br/>
-					<input type="number" id="data_9" name="data_9" style="width : 250px;" class="form-control"/>
+					<input type="number" id="data_8" name="data_8" style="width : 250px;" class="form-control"/>
 				</div>
 				<div style="padding-bottom: 18px;">Questions / Comments<br/>
-					<textarea id="data_10" false name="data_10" style="width : 450px;" rows="6" class="form-control">
+					<textarea id="data_9" false name="data_9" style="width : 450px;" rows="6" class="form-control">
 						
 					</textarea>
 				</div>
 				<div style="padding-bottom: 18px;"><input name="skip_Submit" value="Submit" type="submit"/>
 				</div>
+				</form>
 				<script type="text/javascript">
 						function validateForm() {
 						if (isEmpty(document.getElementById('data_2').value.trim())) {
@@ -121,7 +124,7 @@
 				</script>
 
 
-			</form>
+			
 
 			
 
