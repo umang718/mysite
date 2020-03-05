@@ -2,15 +2,45 @@
 
 {% block content %} 
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-</head>
-<body>
-	<h2>hello umang this is your details....</h2>
-</body>
-</html>
+
+			<style>
+				body 
+				{
+				  background-image: url('https://q-cf.bstatic.com/images/hotel/max1024x768/132/132905656.jpg');
+				  background-repeat: no-repeat;
+				  background-attachment: fixed;
+				  background-size: 100% 100%;
+				}
+			</style>
+			<h1>Your Room has been booked successful</h1>	
+			<h2>Your Room details are as below.</h2>
+
+				<!-- <p>{{ detail.Firstname}}</p>
+				<p>{{ detail.Lastname}}</p>
+				<p>{{ detail.Phone}}</p>
+				<p>{{ detail.Email}}</p>
+				<p>{{ detail.Arrivaldate}}</p>
+				<p>{{ detail.Timeslot}}</p>
+				<p>{{ detail.Numberofadults}}</p>
+				<p>{{ detail.Numberofchildren}}</p>
+				<p>{{ detail.Comments}}</p> -->
+
+
+
+			{% for detail in details %}
+
+				<p>{{ detail.Firstname}}</p>
+				<p>{{ detail.Lastname}}</p>
+				<p>{{ detail.Phone}}</p>
+				<p>{{ detail.Email}}</p>
+				<p>{{ detail.Arrivaldate}}</p>
+				<p>{{ detail.Timeslot}}</p>
+				<p>{{ detail.Numberofadults}}</p>
+				<p>{{ detail.Numberofchildren}}</p>
+				<p>{{ detail.Comments}}</p>
+			{% endfor %}	
+			<h2></h2>
+
 
 {% endblock %}
 

@@ -27,7 +27,8 @@ def submitform(request):
 
 	room=roomdetails(Firstname=data_1,Lastname=data_2,Phone=data_3,Email=data_4,Arrivaldate=data_5,Timeslot=data_6,Numberofadults=data_7,Numberofchildren=data_8,Comments=data_9)
 	room.save()
-	return render(request,'home.html')
+	all_details=roomdetails.objects.filter(Firstname=data_1)
+	return render(request,'details.html',{'details' : all_details})
 	
 
 def signup(request):
@@ -49,3 +50,8 @@ def secret_page(request):
 
 class SecretPage(LoginRequiredMixin,TemplateView):
 	template_name='secret_page.html'
+
+
+# def index(request):
+# 	all_details=roomdetails.objects.all()
+# 	return render(request,'details.html',{details : all_details})
