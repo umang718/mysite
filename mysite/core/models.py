@@ -9,9 +9,11 @@ class roomdetails(models.Model):
 	Email=models.CharField(max_length=200)
 	Arrivaldate=models.CharField(max_length=200)
 	Timeslot=models.CharField(max_length=200)
-	Numberofadults=models.CharField(max_length=200)
-	Numberofchildren=models.CharField(max_length=200)
+	Numberofadults=models.IntegerField()
+	Numberofchildren=models.IntegerField()
 	Comments=models.TextField(max_length=200)
+	Starttime=models.IntegerField()
+	Endtime=models.IntegerField()
 
 	def __str__(self):
 		return self.Firstname

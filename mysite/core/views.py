@@ -5,18 +5,46 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import roomdetails
+from django.utils import timezone
 from django.http import HttpResponse
+from array import *
 
 # Create your views here.
 def home(request):
 	# data_5=request.POST["data_5"]
 	# data_6=request.POST["data_6"]
 	# rom=roomdetails(Arrivaldate=data_5,Timeslot=data_6)
-	
-	return render(request,'home.html')
+	print("Home page call is made")
 
-# def Check(request):
-	# return render(request,'home.html')
+	# Get the details form the room_details.
+	# room=roomdetails(Firstname="nikunj", 
+	# 	Lastname="sorathiya",
+	# 	Phone="a",
+	# 	Email="af",
+	# 	Numberofadults=1,Numberofchildren=0,
+	# 	Comments="f",
+	# 	Arrivaldate=timezone.now(),
+	# 	Starttime=3,
+	# 	Endtime=4)
+	# room.save()
+	booked_timeSlots = roomdetails.objects.all()
+
+	# fill in available time slots.
+	# 
+	timeslot_byhour = [0]*24
+	for row in booked_timeSlots:
+		for hour in range(row.Starttime,row.Endtime):
+			timeslot_byhour[hour]=1
+	print(timeslot_byhour)
+	timeslot_byhour_string = [];
+	for hour in range(len(timeslot_byhour)):
+		if (timeslot_byhour[hour]==1):
+			timeslot_byhour_string.append({"Starttime": hour, "string":"{}-{}".format(hour,hour+1)})
+	print(timeslot_byhour_string)
+	return render(request,'availability2.html')
+
+def submit(request):
+	return render(request,'home.html')
 
 def submitform(request):
 	print("your form is submitted successfully")

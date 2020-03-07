@@ -24,6 +24,7 @@ urlpatterns = [
     path('secret/', views.secret_page,name='secret'),
     path('secret2/', views.SecretPage.as_view(),name='secret2'),
     path('signup/',views.signup, name='signup'),
+    path('submit',views.submit, name='submit'),
     path('accounts/',include('django.contrib.auth.urls')),
     path('submitform',views.submitform, name='submitform'),
 ]
