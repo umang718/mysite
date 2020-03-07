@@ -9,8 +9,14 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
+	# data_5=request.POST["data_5"]
+	# data_6=request.POST["data_6"]
+	# rom=roomdetails(Arrivaldate=data_5,Timeslot=data_6)
+	
 	return render(request,'home.html')
 
+# def Check(request):
+	# return render(request,'home.html')
 
 def submitform(request):
 	print("your form is submitted successfully")
@@ -25,9 +31,9 @@ def submitform(request):
 	data_8=request.POST["data_8"]
 	data_9=request.POST["data_9"]
 
-	room=roomdetails(Firstname=data_1,Lastname=data_2,Phone=data_3,Email=data_4,Arrivaldate=data_5,Timeslot=data_6,Numberofadults=data_7,Numberofchildren=data_8,Comments=data_9)
+	room=roomdetails(Firstname=data_1,Lastname=data_2,Phone=data_3,Email=data_4,Numberofadults=data_7,Numberofchildren=data_8,Comments=data_9)
 	room.save()
-	all_details=roomdetails.objects.filter(Firstname=data_1)
+	all_details=roomdetails.objects.all()	
 	return render(request,'details.html',{'details' : all_details})
 	
 

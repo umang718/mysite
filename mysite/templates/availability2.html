@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block content %} 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+				<style>
+					body 
+					{
+					  background-image: url('https://q-cf.bstatic.com/images/hotel/max1024x768/132/132905656.jpg');
+					  background-repeat: no-repeat;
+					  background-attachment: fixed;
+					  background-size: 100% 100%;
+					}
+				</style>
+
+				<form method="post"  action="submitform">
+				{% csrf_token %}
+				<h1>Check Room Availability</h1>
+					<div style="display: flex; padding-bottom: 18px;width : 450px;">
+						<div style="padding-bottom: 18px;">Arrival date<span style="color: red;"> *</span><br/>
+							<input type="date" placeholder="Select Date Here" id="data_5" name="data_5"   style="width : 250px;" class="form-control" required/>
+							
+						</div>
+					</div>
+					<div style="padding-bottom: 18px;">Select Your Time Slot<span style="color: red;"> *</span><br/>
+
+							<select type="text" id="data_6" name="data_6" value="{{ details.Arrivaldate}}"
+							 style="width : 250px;" class="form-control">
+							<!-- <option value="detail.Timeslot">{{ detail.Timeslot }} -->
+								
+							<!-- </option>  -->
+						        
+						    </select>
+					</div>
+
+					<div style="padding-bottom: 18px;"><input name="btnSubmit" value="Submit" type="submit"/>
+					</div>
+				</form>
+						    
+
+
+</body>
+</html>
+
+
+
+{% endblock %}

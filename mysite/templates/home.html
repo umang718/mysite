@@ -38,32 +38,34 @@
 				<div style="padding-bottom: 18px;">Email<span style="color: red;"> *</span><br/>
 					<input type="text" id="data_4" name="data_4" style="width : 450px;" class="form-control"/>
 				</div>
-				<div style="padding-bottom: 18px;">Arrival date<span style="color: red;"> *</span><br/>
+
+				<div style="padding-bottom: 18px;">Arrival Date<span style="color: red;"> *</span><br/>
 					<input type="date" id="data_5" name="data_5" style="width : 250px;" class="form-control"/>
 				</div>
-				
-				
-				
-				<div style="padding-bottom: 18px;">Select Your Time Slot<span style="color: red;"> *</span><br/>
-					<select type="text" id="data_6" name="data_6" style="width : 250px;" class="form-control"> 
-				        <option value ="0"> Please select </option>
-				        <option value = "08:00-9:00" > 08:00-9:00 </option>
-				        <option value = "09:00-10:00" > 09:00-10:00 </option>
-				        <option value = "10:00-11:00" > 10:00-11:00 </option>
-				        <option value = "11:00-12:00" > 11:00-12:00 </option>
-				        <option value = "12:00-13:00" > 12:00-13:00 </option>
-				        <option value = "13:00-14:00" > 13:00-14:00 </option>
-				        <option value = "14:00-15:00" > 14:00-15:00 </option>
-				        <option value = "15:00-16:00" > 15:00-16:00 </option>
-				        <option value = "16:00-17:00" > 16:00-17:00 </option>
-				        <option value = "17:00-18:00" > 17:00-18:00 </option>
-				        <option value = "18:00-19:00" > 18:00-19:00 </option>
-				        <option value = "19:00-20:00" > 19:00-20:00 </option>
-				        <option value = "20:00-21:00" > 20:00-21:00 </option>
-				        <option value = "21:00-22:00" > 21:00-22:00 </option>
-				        <option value = "22:00-23:00" > 22:00-23:00 </option>
-				    </select>
+
+
+				<div style="padding-bottom: 18px;">Arrival Date<span style="color: red;"> *</span><br/>
+					
+					<select id="data_6" name="data_6" >
+					  <option value="8:00-9:00">8:00-9:00</option>
+					  <option value="9:00-10:00">9:00-10:00</option>
+					  <option value="10:00-11:00">10:00-11:00</option>
+					  <option value="11:00-12:00">11:00-12:00</option>
+					  <option value="12:00-13:00">12:00-13:00</option>
+					  <option value="13:00-14:00">13:00-14:00</option>
+					  <option value="14:00-15:00">14:00-15:00</option>
+					  <option value="15:00-16:00">15:00-16:00</option>
+					  <option value="16:00-17:00">16:00-17:00</option>
+					  <option value="17:00-18:00">17:00-18:00</option>
+					  <option value="18:00-19:00">18:00-19:00</option>
+					  <option value="19:00-20:00">19:00-20:00</option>
+					  <option value="20:00-21:00">20:00-21:00</option>
+					  <option value="21:00-22:00">21:00-22:00</option>
+					  <option value="22:00-23:00">22:00-23:00</option>
+					</select>
+
 				</div>
+				
 			
 				
 				<div style="padding-bottom: 18px;">Number of adults<span style="color: red;"> *</span><br/>
@@ -123,8 +125,17 @@
 						}
 				</script>
 
+								<script type="text/javascript">
+									var disabledDates = ["2015-11-28","2015-11-14","2015-11-21"]
 
-			
+				$('input').datepicker({
+				    beforeShowDay: function(date){
+				        var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+				        return [ disabledDates.indexOf(string) == -1 ]
+				    }
+				});
+								</script>
+							
 
 			
 
