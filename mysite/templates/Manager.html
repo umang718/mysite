@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="C:\Users\Umang Sorathiya\Desktop\css"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Play">
+
+<style type="text/css">
+	body
+	{
+		font-family: Tahoma,Geneva,sans-serif;
+		color: #fff;
+		background: url(https://images.unsplash.com/photo-1472712739516-7ad2b786e1f7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max);
+		background-size: cover;
+	}
+
+	.SignIn
+	{
+		background: rgba(44,62,80,0.7);
+		padding: 40px;
+		width: 250px;
+		margin: auto;
+		margin-top: 80px;
+		height: 400px;
+		margin-left: 500px;
+	}
+
+	form
+	{
+		width: 240px;
+		text-align: center;
+
+
+	}
+
+
+	input
+	{
+		width: 240px;
+		text-align: center;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid #fff;
+		font-family: 'Play',sans-serif;
+		font-size: 16px;
+		font-weight: 200px;
+		padding: 10px 0;
+		transition: border 0.5s;
+		outline: none;
+		color: #fff;
+	}
+	input[type=submit]
+	{
+		border: none;
+		width: 190px;
+		background: white;
+		font-size: 16px;
+		color: #000;
+		line-height: 25px;
+		padding: 10px 0;
+		border-radius: 15px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover
+	{
+		color: #fff;
+		background-color: black;
+
+	}
+
+	h2
+	{
+		color: white;
+	}
+	a
+	{
+		color: yellow;
+		text-decoration: blink;
+	}
+	a:hover
+	{
+		color: blue;
+	} 
+	.container
+	{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+
+	::placeholder
+	{
+		color: aliceblue;
+		opacity: 0.8;
+	}
+	
+</style>
+</head>
+<body>
+	<div class="SignIn">
+		<form method="post" action="addroom">
+			{% csrf_token %}
+			<h2 style="color:white">Welcome</h2><br><br><br><br>
+			<input type="submit" value="Add Room"></a><br><br><br><br>
+			<!-- <input type="submit" value="See Room Details"></a><br><br>  -->
+
+			<!-- <div id="container">
+				<a href="#" style=" margin-right:0px; font-size: 13px; font-family: Tahoma,Geneva,sans:serif;">Reset Password</a>
+			<a href="#" style=" margin-right:0px; font-size: 13px; font-family: Tahoma,Geneva,sans:serif;">Forgot  Password</a> 	
+			</div><br><br><br><br><br>
+			Don't have account?<a href="#">&nbsp;Sign Up</a> -->
+			 
+		</form>
+		<form method="post" action="roomdetails">
+			{% csrf_token %}
+			<h2 style="color:white">Welcome</h2><br><br><br><br>
+			<input type="submit" value="RoomDetails"></a><br><br><br><br>
+			<!-- <input type="submit" value="See Room Details"></a><br><br>  -->
+
+			<!-- <div id="container">
+				<a href="#" style=" margin-right:0px; font-size: 13px; font-family: Tahoma,Geneva,sans:serif;">Reset Password</a>
+			<a href="#" style=" margin-right:0px; font-size: 13px; font-family: Tahoma,Geneva,sans:serif;">Forgot  Password</a> 	
+			</div><br><br><br><br><br>
+			Don't have account?<a href="#">&nbsp;Sign Up</a> -->
+			 
+		</form>
+
+		
+	</div>
+</body>
+</html>

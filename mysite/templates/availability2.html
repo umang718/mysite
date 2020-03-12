@@ -10,50 +10,122 @@
 </head>
 <body>
 				<style>
-					body 
+					body
 					{
-					  background-image: url('https://q-cf.bstatic.com/images/hotel/max1024x768/132/132905656.jpg');
-					  background-repeat: no-repeat;
-					  background-attachment: fixed;
-					  background-size: 100% 100%;
+						font-family: Tahoma,Geneva,sans-serif;
+						color: #fff;
+						background: url(https://images.unsplash.com/photo-1472712739516-7ad2b786e1f7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max);
+						background-size: cover;
 					}
-				</style>
+					.SignIn
+					{
+						background: rgba(44,62,80,0.7);
+						padding: 30px;
+						width: 450px;
+						margin: auto;
+						margin-top: 80px;
+						margin-bottom: 80px;
+						height: 400px;
+						margin-left: 400px;
+						margin-right: 400px;
+					}
 
+					form
+					{
+						width: 340px;
+						text-align: center;
+						height: 200px; 
+
+
+					}
+
+
+					input
+					{
+						width: 240px;
+						text-align: center;
+						background: transparent;
+						border: none;
+						border-bottom: 1px solid #fff;
+						font-family: 'Play',sans-serif;
+						font-size: 16px;
+						font-weight: 200px;
+						padding: 10px 0;
+						transition: border 0.5s;
+						outline: none;
+						color: #fff;
+					}
+					input[type=button]
+					{
+						border: none;
+						width: 190px;
+						background: white;
+						font-size: 16px;
+						color: #000;
+						line-height: 25px;
+						padding: 10px 0;
+						border-radius: 15px;
+						cursor: pointer;
+					}
+
+					input[type=button]:hover
+					{
+						color: #fff;
+						background-color: black;
+
+					}
+
+					h2
+					{
+						color: white;
+					}
+					a
+					{
+						color: yellow;
+						text-decoration: blink;
+					}
+					a:hover
+					{
+						color: blue;
+					} 
+					.container
+					{
+						display: flex;
+						flex-direction: row;
+						width: 100%;
+					}
+
+					::placeholder
+					{
+						color: aliceblue;
+						opacity: 0.8;
+					}
+
+				</style>
+			<div class="SignIn">
 				<form method="post"  action="submit">
 				{% csrf_token %}
-				<h1>Check Room Availability</h1>
-					<div style="display: flex; padding-bottom: 18px;width : 450px;">
-						<div style="padding-bottom: 18px;">Arrival date<span style="color: red;"> *</span><br/>
+				<h2>Check Room Availability</h2>
+					<!-- <div style="display: flex; padding-bottom: 18px;width : 450px;">
+						<div style="padding-bottom: 18px;">Arrival date<span style="color: red;"> *</span><br/> -->
 							<input type="date" placeholder="Select Date Here" id="data_5" name="data_5"   style="width : 250px;" class="form-control" required/>
 							
-						</div>
-					</div>
+						<!-- </div> -->
+					<!-- </div> -->
 					<div style="padding-bottom: 18px;">Select Your Time Slot<span style="color: red;"> *</span><br/>
 
 							<select type="text" id="data_6" name="data_6" style="width : 250px;" class="form-control">
-							
-							  <option value="8:00-9:00">8:00-9:00</option>
-							  <option value="9:00-10:00">9:00-10:00</option>
-							  <option value="10:00-11:00">10:00-11:00</option>
-							  <option value="11:00-12:00">11:00-12:00</option>
-							  <option value="12:00-13:00">12:00-13:00</option>
-							  <option value="13:00-14:00">13:00-14:00</option>
-							  <option value="14:00-15:00">14:00-15:00</option>
-							  <option value="15:00-16:00">15:00-16:00</option>
-							  <option value="16:00-17:00">16:00-17:00</option>
-							  <option value="17:00-18:00">17:00-18:00</option>
-							  <option value="18:00-19:00">18:00-19:00</option>
-							  <option value="19:00-20:00">19:00-20:00</option>
-							  <option value="20:00-21:00">20:00-21:00</option>
-							  <option value="21:00-22:00">21:00-22:00</option>
-							  <option value="22:00-23:00">22:00-23:00</option>
+							  {% for slot in available_slots %}
+
+							  <option value={{slot.Starttime}}>{{slot.string}}</option>
+							  {% endfor %}
 							</select>
 					</div>
-
-					<div style="padding-bottom: 18px;"><input name="Submit" value="Submit" type="submit"/>
-					</div>
+					<input type="submit"  name=" Submit" value="Submit">
+					<!-- <div style="padding-bottom: 18px;"><input name="Submit" value="Submit" type="submit"/> -->
+					<!-- </div> -->
 				</form>
-						    
+			</div>			    
 
 
 </body>

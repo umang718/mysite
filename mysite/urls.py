@@ -20,6 +20,9 @@ from mysite.core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('Manager',views.Manager,name='Manager'),
+    path('addroom',views.addroom,name='addroom'),
+    # path('roomdetails',views.roomdetails,name='roomdetails'),
     path('', views.home, name='home'),
     path('secret/', views.secret_page,name='secret'),
     path('secret2/', views.SecretPage.as_view(),name='secret2'),

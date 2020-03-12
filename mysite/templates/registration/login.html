@@ -5,20 +5,132 @@
 
 {% block content %}
 
-<style>
-				body 
+			<style>
+				body
 				{
-				  background-image: url('https://q-cf.bstatic.com/images/hotel/max1024x768/132/132905656.jpg');
-				  background-repeat: no-repeat;
-				  background-attachment: fixed;
-				  background-size: 100% 100%;
+					font-family: Tahoma,Geneva,sans-serif;
+					color: #fff;
+					background: url(https://images.unsplash.com/photo-1472712739516-7ad2b786e1f7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max);
+					background-size: cover;
 				}
+
+				.SignIn
+				{
+					background: rgba(44,62,80,0.7);
+					padding: 10px;
+					width: 250px;
+					margin: auto;
+					margin-top: 80px;
+					height: 300px;
+					margin-left: 450px;
+				}
+
+				form
+				{
+					width: 240px;
+					text-align: center;
+
+
+				}
+
+				input
+				{
+					width: 220px;
+					text-align: center;
+					background: transparent;
+					border: none;
+					border-bottom: 1px solid #fff;
+					font-family: 'Play',sans-serif;
+					font-size: 16px;
+					font-weight: 200px;
+					padding: 10px 0;
+					transition: border 0.5s;
+					outline: none;
+					color: #fff;
+				}
+				input[type=button]
+				{
+					border: none;
+					width: 190px;
+					background: white;
+					font-size: 16px;
+					color: #000;
+					line-height: 25px;
+					padding: 10px 0;
+					border-radius: 15px;
+					cursor: pointer;
+				}
+
+				input[type=button]:hover
+				{
+					color: #fff;
+					background-color: black;
+
+				}
+
+				h2
+				{
+					color: white;
+				}
+				a
+				{
+					color: yellow;
+					text-decoration: blink;
+				}
+				a:hover
+				{
+					color: blue;
+				} 
+				.container
+				{
+					display: flex;
+					flex-direction: row;
+					width: 100%;
+				}
+
+				::placeholder
+				{
+					color: aliceblue;
+					opacity: 0.8;
+				}
+
+				button
+				{
+					border: none;
+					width: 190px;
+					background: white;
+					font-size: 16px;
+					color: #000;
+					line-height: 25px;
+					padding: 10px 0;
+					border-radius: 15px;
+					cursor: pointer;
+				}
+
+				button:hover
+				{
+					color: #fff;
+					background-color: black;
+				}
+
 			</style>
 
 
 
 <div class="row  justify-content-center">
-	<div  class="col-6">
+	<div class="SignIn">
+		<form method="post" novalidate>
+			{% csrf_token %}
+			<h2 style="color:white">Log In</h2>
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="Password"><br><br><br>
+			<button type="submit" class="btn btn-primary">Log in</button><br><br>
+			<a href="{% url 'password_reset'%}" class="btn btn-link">Forgot your password?</a>
+<!-- 			<a href=""><input type="button" value="Log In"></a><br><br>
+ -->			<div id="container">
+		</form>
+	</div>
+	<!-- <div  class="col-6">
 		<div class="card">
 			<div class="card-body">
 						<h2>login</h2>
@@ -34,7 +146,7 @@
 		</div>
 		
 	</div>
-		
+		 -->
 </div>
   
 {% endblock%}

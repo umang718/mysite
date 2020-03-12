@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="C:\Users\Umang Sorathiya\Desktop\css"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Play">
+
+<style type="text/css">
+	body
+	{
+		font-family: Tahoma,Geneva,sans-serif;
+		color: #fff;
+		background: url(https://images.unsplash.com/photo-1472712739516-7ad2b786e1f7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max);
+		background-size: cover;
+	}
+
+	.SignIn
+	{
+		background: rgba(44,62,80,0.7);
+		padding: 40px;
+		width: 250px;
+		margin: auto;
+		margin-top: 70px;
+		height: 550px;
+		margin-left: 500px;
+	}
+
+	form
+	{
+		width: 240px;
+		text-align: center;
+
+
+	}
+
+
+	input
+	{
+		width: 240px;
+		text-align: center;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid #fff;
+		font-family: 'Play',sans-serif;
+		font-size: 16px;
+		font-weight: 200px;
+		padding: 10px 0;
+		transition: border 0.5s;
+		outline: none;
+		color: #fff;
+	}
+	input[type=button]
+	{
+		border: none;
+		width: 190px;
+		background: white;
+		font-size: 16px;
+		color: #000;
+		line-height: 25px;
+		padding: 10px 0;
+		border-radius: 15px;
+		cursor: pointer;
+	}
+
+	input[type=button]:hover
+	{
+		color: #fff;
+		background-color: black;
+
+	}
+
+	h2
+	{
+		color: white;
+	}
+	a
+	{
+		color: yellow;
+		text-decoration: blink;
+	}
+	a:hover
+	{
+		color: blue;
+	} 
+	.container
+	{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+
+	::placeholder
+	{
+		color: aliceblue;
+		opacity: 0.8;
+	}
+	
+</style>
+</head>
+<body>
+	<h2  align="center" style="color:white">Room Details</h2>
+	<div class="SignIn">
+		
+		<form>
+			<h2 style="color:white">RoomId:{{ detail.RoomId }}</h2>
+			<input type="text" value=" {{ detail.FirstName }}"><br><br>
+			<input type="text" value=" {{ detail.LastName }}"><br><br>
+			<input type="text" value=" {{ detail.Email }}"><br><br>
+			<input type="text" value=" {{ detail.Phone }}"><br><br>
+			<input type="text" value=" {{ detail.ArrivalDate }}"><br><br>
+			<input type="text" value=" {{ detail.Starttime }}"><br><br>
+			<input type="text" value=" {{ detail.Endtime }}"><br><br>
+			<input type="text" value=" {{ detail.UserId }}"><br><br>
+
+			
+			
+			
+			 
+		</form>
+
+		
+	</div>
+</body>
+</html>
