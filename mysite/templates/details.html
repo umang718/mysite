@@ -20,7 +20,7 @@
 			
 				<h1>Your Room has been booked successfully</h1>	
 				<h2>Your Room details are as below.</h2>
-				{% for detail in details %}
+				{% for detail in bookingdetail %}
 
 				
 					<div style="display: flex; padding-bottom: 18px;width : 450px;">
@@ -31,30 +31,30 @@
 							<input type="text" style="width: 100%;" class="form-control" value="{{ detail.Lastname}}" />
 						</div>
 					</div>
-
+					<div style="padding-bottom: 18px;">Email<br/>
+					<input type="text"  style="width : 450px;" value="{{ detail.Email}}" class="form-control"/>
+					</div>
 					<div style="padding-bottom: 18px;">Phone<br/>
 						<input type="text"  style="width : 450px;" class="form-control" value="{{ detail.Phone}}" />
 					</div>
 
-					<div style="padding-bottom: 18px;">Email<br/>
-						<input type="text"  style="width : 450px;" value="{{ detail.Email}}" class="form-control"/>
-					</div>
+					
 					<div style="padding-bottom: 18px;">Arrival Date<br/>
-						<input type="text"  style="width : 450px;" value="{{ detail.Email}}" class="form-control"/>
+						<input type="text"  style="width : 450px;" value="{{ detail.BookDate}}" class="form-control"/>
 					</div>
 					
 					
-					<div style="padding-bottom: 18px;">Number of adults<br/>
-						<input type="number" style="width : 250px;" value="{{ detail.Numberofadults}}" class="form-control"/>
+					<div style="padding-bottom: 18px;">Starttime<br/>
+						<input type="number" style="width : 250px;" value="{{ detail.BookStarttime}}" class="form-control"/>
 					</div>
-					<div style="padding-bottom: 18px;">Number of children<br/>
-						<input type="number" value="{{ detail.Numberofchildren}}" style="width : 250px;" class="form-control"/>
+					<div style="padding-bottom: 18px;">Endtime<br/>
+						<input type="number" value="{{ detail.BookEndtime}}" style="width : 250px;" class="form-control"/>
 					</div>
-					<div style="padding-bottom: 18px;">Questions / Comments<br/>
-						<textarea  style="width : 450px;" rows="6" >
-							{{detail.Comments}}
-						</textarea>
+					<div style="padding-bottom: 18px;">Room No<br/>
+						<input type="number" value="{{ detail.RoomNo}}" style="width : 250px;" class="form-control"/>
 					</div>
+
+					
 				{% endfor %}
 			
 			

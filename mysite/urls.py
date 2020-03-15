@@ -22,8 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Manager',views.Manager,name='Manager'),
     path('addroom',views.addroom,name='addroom'),
-    # path('roomdetails',views.roomdetails,name='roomdetails'),
+    path('submitdate',views.submitdate,name='submitdate'),
     path('', views.home, name='home'),
+    
     path('secret/', views.secret_page,name='secret'),
     path('secret2/', views.SecretPage.as_view(),name='secret2'),
     path('signup/',views.signup, name='signup'),

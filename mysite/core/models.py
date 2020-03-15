@@ -3,30 +3,15 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-
-
-# class AddRoom(models.Model):
-# 	RoomId=models.IntegerField()
-# 	Starttime=models.ForeignKey(roomdetails,default=0,on_delete=models.SET_DEFAULT,verbose_name="StartEndtime")
-# 	Endtime=models.ForeignKey(roomdetails,default=0,on_delete=models.SET_DEFAULT,verbose_name="StartEndtime")
-# 	# Username=models.CharField(max_length=100)
-# 	IsAvailable=models.BooleanField()
-
-# 	def __str__(self):
-# 		return self.RoomId
-
-# 	class Meta:
-# 		verbose_name_plural="Add"
-
 class RoomDetails(models.Model):
 	RoomId=models.IntegerField()
 	RoomStarttime=models.IntegerField()
 	RoomEndtime=models.IntegerField()
-	RoomUser=models.ForeignKey(User,default=0,on_delete=models.SET_DEFAULT)
 	IsRoomAvailable=models.BooleanField()
 
 	def __str__(self):
-		return self.RoomId		
+		return "{}".format(self.RoomId)		
+
 
 class BookingDetails(models.Model):
 	Firstname=models.CharField(max_length=200)
